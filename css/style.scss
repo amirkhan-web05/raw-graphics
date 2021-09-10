@@ -1,0 +1,1863 @@
+/* ==== import ==== */ 
+
+@import "nullstyle.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+/* ==== import ==== */ 
+
+/*====== var ======*/
+
+/* === color ===*/
+$color:#323232;
+$black:#000;
+$white:#fff;
+
+$green:#00b894;
+$grey:#a6a6a6;
+$grey-1:#828282;
+
+/* === color ===*/
+
+/* ==== font-size ==== */
+$fz:48px;
+$fz-2:36px;
+/* ==== font-size ==== */
+
+/* ==== mixin ==== */
+
+@mixin fonts-z($f) {
+	font-size: $f;
+}
+
+/* ==== mixin ==== */
+
+
+/* ==== fonts ==== */
+$fonts: 'Roboto Slab', serif;
+$fonts-1:'PT Sans', sans-serif;
+
+/* ==== fonts ==== */
+
+/* ==== extend ==== */
+
+%bckg-green {
+	background-color:$green;
+	padding: 15px 37px;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	text-decoration: none;
+	font-family: $fonts;
+	color:$white;
+}
+
+%row-column {
+	background-color: $white;
+	margin: 15px 15px;
+	padding: 50px 35px;	
+}
+
+%column-title {
+	font-size: 20px;
+	font-family: $fonts;
+	padding: 30px 0 10px;
+}
+
+%column-text {
+	font-family: $fonts-1;
+	color:#707070;
+	font-size: 15px;
+}
+
+%round-block {
+	max-width: 210px;
+	height: 200px;
+	
+	width: 100%;
+	border-radius: 50%;	
+}
+
+%menu-link {
+	color:$color;
+	text-decoration: none;
+	font-family: $fonts;
+	padding: 0 17px;
+}
+
+%round {
+	font-family: $fonts;
+	font-size: 36px;
+	color:$white;
+}
+
+%clients {
+	font-size: 16px;
+	font-family: $fonts-1;
+	color:$white;
+	font-weight: 300;
+}
+
+%project__block {
+	background-color: $grey-1;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	height: 350px;
+	padding: 0 15px;
+}
+
+%border__clients {
+	border: solid 1px #e5e5e5;
+	padding: 66px 37px 66px 40px;
+}
+
+
+%client__text-block {
+	font-size: 16px;
+	font-family: $fonts-1;
+	color:#838383;
+	line-height: 30px;
+	margin: 20px 0;
+}
+
+%clinet-round-block {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-color: $grey-1;
+}
+
+%form__input {
+	width: 100%;
+	height: 45px;
+	border: solid 1px #e5e5e5;
+}
+
+%form__input-inner {
+	padding: 15px 14px;
+	color:#707070;
+	width: 100%;
+	height: 45px;
+	outline: none;
+	font-family: $fonts-1;
+}
+
+/* === news === */
+
+%news__block-inner {
+	border: solid 1px #e5e5e5;
+}
+
+%news__photo-inner {
+	background-color: #929292;
+	height: 300px;
+	width: 100%;
+}
+
+
+%news__icons-inner {
+	display: flex;
+	justify-content: space-between;
+}
+
+%news__info-inner {
+	padding: 25px 30px;
+}
+
+/* === news === */
+
+/* ==== extend ==== */
+html,body {
+	font-size: 16px;
+	overflow-x: hidden;
+}
+
+.container {
+	width: 100%;
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+/* === header ===*/
+
+.header {
+	width: 100%;
+	height: 900px;
+	background-image: url('../images/bckg.png');
+	background-size: cover;
+
+	&__inner {
+		width: 100%;
+		padding-top: 30px;
+	}
+
+	&__menu {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	/* === about ===*/
+
+	&__about {
+		margin-top: 250px;
+	}
+
+	@media screen and (max-width: 842px) {
+		&__about {
+			text-align: center;
+			margin-top: 220px;
+		}
+	}
+
+	/* === about ===*/
+
+	&__title {
+		color:$black;
+
+		span {
+			color:#00b894;
+		}
+	}
+
+	&__subtitle {
+		font-size: 48px;
+		font-family: $fonts;
+		font-weight: bold;
+		color:$black;
+	}
+
+	@media screen and (max-width: 714px) {
+		&__subtitle {
+			font-size: 40px;
+		}
+	}
+
+	&__text {
+		font-family: $fonts-1;
+		color:#707070;
+		font-size: 16px;
+		width: 100%;
+		max-width: 660px;
+	}
+
+	/* ==== btn ==== */
+
+	&__btn {
+		display: flex;
+		margin-top: 45px;
+
+		&-row {
+			@extend %bckg-green;
+			padding: 13px 30px;
+			width: 180px;
+			height: 45px;
+		}
+
+		&-row-2 {
+			background-color: $color;
+			text-align: center;
+			padding: 13px 30px;
+			margin-left: 30px;
+			width: 180px;
+			height: 45px;			
+		}
+	}
+
+	@media screen and (max-width: 842px) {
+		&__btn {
+			justify-content: center;
+		}
+	}
+
+	@media screen and (max-width: 472px) {
+		&__btn {
+			display: block;
+			text-align: center;
+
+			&-row {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				text-align: center;
+				align-items: center;
+				margin-top: 20px;
+			}
+
+			&-row-2 {
+				width: 100%;
+				display: flex;
+				margin-top: 20px;
+				margin-left: 0;
+				justify-content: center;
+				text-align: center;
+				align-items: center;
+			}			
+		}		
+	}
+
+	/* ==== btn ==== */	
+
+	&__link {
+		text-decoration: none;
+		color:$white;
+		font-family: $fonts;
+		font-size: 14px;
+	}	
+
+	&__link-2 {
+		text-decoration: none;
+		color:$white;
+		font-family: $fonts;
+		font-size: 14px;		
+	}
+}	
+
+/* ==== toggle menu ====*/
+
+.toggle-menu {
+	display: none;
+}
+
+@media screen and (max-width: 842px) {
+	.toggle-menu {
+		display: block;
+	}
+}
+
+/* ==== toggle menu ====*/
+
+/* ==== nav ====*/
+
+.nav {
+	&-menu {
+		display: flex;
+		align-items: center;
+		@include fonts-z(14px);
+		list-style: none;
+
+		&-link {
+			@extend %menu-link;
+			transition: .3s linear;
+
+			&-active {
+				@extend %bckg-green;
+				margin:0;
+			}
+
+			&:hover {
+				color:$green;
+			}		
+		}
+	}
+}
+
+@media screen and (max-width: 842px) {
+	.nav {
+		display: none;
+	}
+}
+
+/* ==== nav ====*/
+
+
+.title {
+	font-size: 28px;
+	font-family:$fonts;
+}
+
+@media screen and (max-width: 714px) {
+	.title {
+		font-size: 23px;
+	}
+}
+
+/* === header ===*/
+
+/* === about ===*/
+
+.about {
+	width: 100%;
+
+	/* === inner ===*/
+
+	&__inner {
+		margin-top: 170px;
+		display: flex;
+	}
+
+	@media screen and (max-width: 1188px) {
+		&__inner {
+			display: block;
+			text-align: center;
+			margin-top: 50px;
+		}
+	}	
+
+	/* === inner ===*/
+
+	/* === title ===*/
+
+	&__title {
+		font-size: 22px;
+		font-family: $fonts;
+		font-weight: 300;
+
+		&::after {
+			content:"";
+			width: 50px;
+			background-color: #00b894;
+			height: 2px;
+			display: block;
+			margin: 18px 0 40px;
+		}
+	}
+
+	/* === title ===*/
+
+	@media screen and (max-width: 1188px) {
+		&__title {
+			&::after {
+				margin: 0 auto;
+				margin-top: 18px;
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	/*==== subtitle ====*/	
+
+	&__subtitle {
+		font-family: $fonts;
+		font-size: 36px;
+		color:$color;
+	}
+
+	@media screen and (max-width: 1022px) {
+		&__subtitle {
+			font-size: 30px;
+		}
+	}
+
+	/*==== subtitle ====*/		
+
+	&__text {
+		font-family: $fonts-1;
+		font-size: 15px;
+		color:#707070;
+	}
+}
+
+/* === client === */
+
+.client {
+	width: 100%;
+
+	/* === inner ===*/
+
+	&__inner {
+		display: flex;
+		text-align: center;
+		justify-content: center;
+	}
+
+	@media screen and (max-width: 492px) {
+		&__inner {
+			display: block;
+			text-align: center;
+			margin: 0 auto;
+		}
+	}
+
+	/* === inner ===*/
+
+	/* === active ===*/
+
+	&__active {
+		@extend %round-block;
+		text-align: center;
+		justify-content: center;
+		background-color: #be2edd;
+		padding: 55px 0;
+
+		&-num {
+			@extend %round;
+		}
+
+		&-text {
+			font-size: 16px;
+			font-family: $fonts-1;
+			color:$white;
+			padding-top: 10px;
+		}		
+	}
+
+	@media screen and (max-width: 492px) {
+		&__active {
+			margin: 0 auto;
+		}
+	}	
+
+	/* === active ===*/		
+
+	/* === feedback === */
+
+	&__feedback {
+		@extend %round-block;
+		text-align: center;
+		justify-content: center;
+		background-color: #f9ca24;
+		align-items: center;
+		padding: 55px 0;
+
+		&-num {
+			@extend %round;
+		}
+
+		&-text {
+			font-size: 16px;
+			font-family: $fonts-1;
+			color:$white;
+			padding-top: 10px;
+		}
+	}
+
+	@media screen and (max-width: 492px) {
+		&__feedback {
+			margin: 0 auto;
+		}
+	}	
+
+	/* === feedback === */	
+
+	/* === complete === */
+
+	&__complete {
+		@extend %round-block;
+		text-align: center;
+		margin: 0 auto;
+		background-color: #ff7675;
+		position: relative;
+		top: -50px;
+		padding: 55px 0;
+
+		&-num {
+			@extend %round;
+		}	
+
+		&-text {
+			font-size: 16px;
+			font-family: $fonts-1;
+			color:$white;
+			padding-top: 10px;
+		}			
+	}
+
+	@media screen and (max-width: 492px) {
+		&__complete {
+			top:0;
+			margin-bottom: 30px;
+		}
+	}
+
+	/* === complete === */	
+}
+
+/* === client === */
+
+
+
+/* ==== services ====*/
+
+.services {
+	width: 100%;
+	background:#f5f6fb;
+
+	/* === inner ===*/
+
+	&__inner {
+		display: flex;
+		justify-content: center;
+	}
+
+	@media screen and (max-width:1186px ) {
+		&__inner {
+			flex-wrap: wrap;
+			text-align: center;
+		}
+	}
+
+	/* === inner ===*/	
+
+	&__subtitle {
+		font-size: 48px;
+		font-family: $fonts;
+		text-align: center;
+		padding: 150px 0 60px;
+	}
+
+	/* === item ===*/
+
+	&__item {
+		display: flex;
+		justify-content: center;
+		padding-bottom: 145px;
+	}
+
+	@media screen and (max-width:1186px ) {
+		&__item {
+			flex-wrap: wrap;
+			text-align: center;
+		}
+	}	
+
+	/* === item ===*/
+
+	&__column {
+		background-color: $white;
+		margin: 15px 15px;
+		padding: 50px 35px;
+	}
+
+	/* === title ===*/
+
+	&__title {
+		@extend %column-title;
+	}
+
+	@media screen and (max-width: 1186px) {
+		&__title {
+			font-size: 30px;
+			@extend %column-title;
+		}
+	}
+
+	/* === title ===*/
+
+	/* === text ===*/
+
+	&__text {
+		@extend %column-text;
+	}
+
+	@media screen and (max-width: 1186px) {
+		&__text {
+			font-size: 18px;
+			@extend %column-text;
+		}
+	}	
+
+	/* === text ===*/
+}
+
+/* ==== services ====*/
+
+
+/* ==== software ==== */
+
+.software {
+	width: 100%;
+	background:#00b894;
+
+	&__inner {
+		padding-top: 145px;
+	}
+
+	&__title {
+		font-family: $fonts;
+		font-size: 48px;
+		color:$white;
+		text-align: center;
+	}
+
+	/* === column ===*/
+
+	&__column {
+		margin-top: 75px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	@media screen and (max-width: 650px) {
+		&__column {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+		}
+	}
+
+	/* === column ===*/
+
+	/* === block ===*/	
+
+	&__block {
+		margin: 0 30px;
+		width: 100%;
+	}
+
+	@media screen and (max-width: 650px) {
+		&__block {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+		}
+	}	
+
+	/* === block ===*/	
+
+	&__row {
+		margin: 55px 0;
+	}
+
+}
+
+
+.skill__title {
+	font-family: $fonts;
+	color:$white;
+
+	&::after {
+		content: "";
+		width: 100%;
+		height: 5px;
+		background-image: url('../images/Line bg.png');
+		display: block;
+		position: relative;
+		top: 4.5px;
+		
+	}	
+}
+
+.software__skill-ps {
+	width: 92%;
+	height: 5px;
+	background-color: $white;
+}
+
+.software__skill-eff {
+	width: 97%;
+	height: 5px;
+	background-color: $white;
+}
+
+.software__skill-ils {
+	width: 85%;
+	height: 5px;
+	background-color: $white;
+}
+
+.software__skill-html {
+	width: 90%;
+	height: 5px;
+	background-color: $white;
+}
+
+.software__skill-css {
+	width: 85%;
+	height: 5px;
+	background-color: $white;
+}
+
+.software__skill-js {
+	width: 72%;
+	height: 5px;
+	background-color: $white;
+}
+
+/* ===================== */
+
+.software__skill-block-1 {
+	display: flex;
+	justify-content: flex-end;
+	width: 93.5%;
+}.software__skill-block-2 {
+	display: flex;
+	justify-content: flex-end;
+	width: 85%;
+}.software__skill-block-3 {
+	display: flex;
+	justify-content: flex-end;
+	width: 97%;
+}.software__skill-block-4 {
+	display: flex;
+	justify-content: flex-end;
+	width: 90%;
+}.software__skill-block-5 {
+	display: flex;
+	justify-content: flex-end;
+	width: 85%;
+}.software__skill-block-6 {
+	display: flex;
+	justify-content: flex-end;
+	width: 72%;
+}
+
+/* ===================== */
+
+.skill__num {
+	position: relative;
+	top: -45px;
+	left: 23px;
+	font-family: $fonts;
+	color:$white;
+}
+
+.skill__icons {
+	position: relative;
+	top: -10px;
+}
+.skill__num-2 {
+	position: relative;
+	top: -45px;
+	left: 23px;
+	font-family: $fonts;
+	color:$white;
+}
+
+.skill__icons-2 {
+	position: relative;
+	top: -10px;
+}
+.skill__num-3 {
+	position: relative;
+	top: -45px;
+	left: 23px;
+	font-family: $fonts;
+	color:$white;
+}
+
+.skill__icons-3 {
+	position: relative;
+	top: -10px;
+}
+.skill__num-4 {
+	position: relative;
+	top: -45px;
+	left: 23px;
+	font-family: $fonts;
+	color:$white;
+}
+
+.skill__icons-4 {
+	position: relative;
+	top: -10px;
+}
+
+.skill__num-5 {
+	position: relative;
+	top: -45px;
+	left: 23px;
+	font-family: $fonts;
+	color:$white;
+}
+
+.skill__icons-5 {
+	position: relative;
+	top: -10px;
+}
+
+.skill__num-6 {
+	position: relative;
+	top: -45px;
+	left: 23px;
+	font-family: $fonts;
+	color:$white;
+}
+
+.skill__icons-6 {
+	position: relative;
+	top: -10px;
+}
+
+
+/* ==== software ==== */
+
+/* ==== project ==== */
+
+.project {
+	width: 100%;
+
+	/* === title ===*/
+
+	&__title {
+		font-size: 36px;
+		font-family: $fonts;
+		color:$color;
+		margin-top: 145px;
+	}
+
+	@media screen and (max-width: 735px) {
+		&__title {
+			text-align: center;
+			margin-bottom: 45px;
+			margin-top: 45px;
+		}
+	}
+
+	/* === title ===*/	
+
+	/* === column ===*/
+
+	&__column {
+		display: flex;
+	}
+
+	@media screen and (max-width: 800px) {
+		&__column {
+			display: block;
+		}
+	}
+
+	/* === column ===*/	
+
+	/* === item ===*/
+
+	&__item {
+		display: flex;
+	}
+
+	@media screen and (max-width: 800px) {
+		&__item {
+			display: block;
+		}
+	}
+
+	/* === item ===*/	
+
+	&__row {
+		@extend %project__block;
+		margin: 0 0 30px;
+		transition: .3s linear;
+
+		&:hover {
+			background-color: #e66d6d;
+		}
+	}
+
+	/* === row-1 ===*/
+
+	&__row-1 {
+		@extend %project__block;
+		margin: 0 30px 30px;
+
+		transition: .3s linear;
+
+		&:hover {
+			background-color: #e66d6d;
+		}
+	}	
+
+	@media screen and (max-width: 800px) {
+		&__row-1 {
+			margin: 0 0 30px;
+		}
+	}	
+
+	/* === row-1 ===*/		
+
+	&__name {
+		font-size: 24px;
+		font-family: $fonts;
+		color:$white;
+	}
+
+	&__subtitle {
+		margin-top: 10px;
+		font-family: $fonts;
+		font-size: 14px;
+		color:$white;
+	}
+
+	&__info {
+		opacity: 0;
+		transition: .3s linear;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&__text {
+		font-size: 15px;
+		font-family: $fonts;
+		color:$white;
+		line-height: 32px;
+	}
+}
+
+/* === latest === */
+
+.latest {
+	margin-top: 47px;
+	margin-bottom: 60px;
+
+	&-link {
+		text-decoration: none;
+		font-size: 14px;
+		font-family: $fonts;
+		color:#707070;
+		margin: 0 18px;
+		transition: .3s linear;
+
+		&:hover {
+			color:$green;
+		}
+	}
+
+	/* === toggle ===*/
+
+	&__toggle {
+		display: none;
+	}
+
+	@media screen and (max-width: 735px) {
+		&__toggle {
+			display: block;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+	}
+
+	/* === toggle ===*/	
+}
+
+@media screen and (max-width: 735px) {
+	.latest {
+		text-align: center;
+		display: none;
+	}
+}
+
+
+/* === latest === */
+
+/* ==== project ==== */
+
+
+/* ==== client ==== */
+
+.client {
+	width: 100%;
+
+	/* === column ===*/
+
+	&__column {
+		display: flex;
+		margin-top: 55px;
+	}
+
+	@media screen and (max-width: 1154px) {
+		&__column {
+			flex-wrap: wrap;
+		}
+	}
+
+	/* === column ===*/	
+
+	&__item {
+		margin-top: 140px;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 48px;
+		color:$color;
+		font-family: $fonts;
+	}
+
+	/* === text ===*/
+
+	&__text {
+		@extend %client__text-block;
+	}
+
+	@media screen and (max-width: 1154px) {
+		&__text {
+			font-size: 23px;
+		}
+	}
+
+	/* === text ===*/	
+
+	/* === special-round ===*/
+
+	&__special-round {
+		@extend %clinet-round-block;
+	}
+
+	@media screen and (max-width: 1154px) {
+		&__special-round {
+			margin: 0 auto;
+			margin-bottom: 30px;
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+	/* === special-round ===*/	
+
+	/* === block ===*/
+
+	&__block {
+		@extend %border__clients;
+	}
+
+	@media screen and (max-width: 1154px) {
+		&__block {
+			text-align: center;
+		}
+	}
+
+	/* === block ===*/	
+
+	&__column-block {
+		display: flex;
+		align-items: center;
+	}
+
+	/* === special ===*/
+
+	&__special {
+		display: flex;
+		align-items: center;
+	}
+
+	@media screen and (max-width: 1154px) {
+		&__special {
+			display: block;
+		}
+	}
+
+	/* === special ===*/
+
+	/* === info-text ===*/
+
+	&__info-text {
+		margin-left: 15px;
+	}
+
+	@media screen and(max-width: 1154px) {
+		&__info-text {
+			margin-left: 0;
+			margin-bottom: 30px;
+		}
+	}
+
+	/* === info-text ===*/
+
+	/* === tester ===*/	
+
+	&__tester {
+		width: 54%;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	@media screen and(max-width: 1154px) {
+		&__tester {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+
+	/* === tester ===*/		
+
+	/* === name ===*/
+
+	&__name {
+		font-family: $fonts;
+		font-weight: bold;
+		color:#707070;
+	}
+
+	@media screen and (max-width: 1154px) {
+		&__name {
+			font-size: 30px;
+		}
+	}
+
+	/* === name ===*/	
+
+	/* === special-human ===*/
+
+	&__special-human {
+		font-family: $fonts;
+		color:#707070;
+	}
+
+	@media screen and (max-width: 1154px) {
+		&__special-human {
+			font-size: 20px;
+		}
+	}
+
+	/* === special-human ===*/		
+}
+
+/* === block-row-1 ===*/
+
+.block-row-1 {
+	margin-left: 70px;
+}
+
+@media screen and (max-width: 1154px) {
+	.block-row-1 {
+		margin:0;
+		margin-top: 30px;
+	}	
+}
+
+/* === block-row-1 ===*/
+
+/* ==== client ==== */
+
+/* === send ===*/
+
+.send {
+	width: 100%;
+
+	/* === inner ===*/
+
+	&__inner {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: 100px;
+		margin-top: 150px;
+	}
+
+	@media screen and (max-width: 1320px) {
+		&__inner {
+			display: block;
+			text-align: center;
+		}
+	}
+
+	/* === inner ===*/	
+
+	/* === block ===*/	
+
+	&__block {
+		background-color: #929292;
+	}
+
+	@media screen and (max-width: 1320px) {
+		&__block {
+			display: none;
+		}
+	}
+
+	/* === block ===*/	
+
+	/* === title ===*/		
+
+	&__title {
+		font-size: 22px;
+		font-family: $fonts;
+		color:$color;
+
+		&::after {
+			content: "";
+			width: 50px;
+			height: 2px;
+			background-color: #00b894;
+			display: block;
+			margin: 18px 0 40px;
+		}
+	}
+
+	@media screen and (max-width: 1320px) {
+		&__title {
+			&::after {
+				margin: 18px auto;
+			}
+		}
+	}
+
+	/* === title ===*/		
+
+	&__subtitle {
+		font-size: 36px;
+		color:$color;
+		font-family: $fonts;
+		font-weight: bold;
+		margin-bottom: 84px;
+	}
+
+	&__column {
+		margin-top: 55px;
+	}
+}
+
+/* === form ===*/
+
+.form {
+
+	/* === block ===*/
+
+	&__block {
+		display: flex;
+	}
+
+	@media screen and (max-width: 1320px) {
+		&__block {
+			justify-content: center;
+		}
+	}
+
+	@media screen and (max-width: 655px) {
+		&__block {
+			display: block;
+		}
+	}
+
+	/* === block ===*/	
+
+	/* === name ===*/
+
+	&__name {
+		@extend %form__input;
+		max-width: 285px;
+
+		&-inner[type="text"] {
+			@extend %form__input-inner;
+			max-width: 285px;
+		}
+	}
+
+	@media screen and (max-width: 655px) {
+		&__name {
+			width: 100%;
+			margin:0 auto;
+
+			&-inner {
+				text-align: center;
+				width: 100%;			
+			}
+		}
+	}
+
+	/* === name ===*/
+
+	/* === email ===*/
+
+	&__email {
+		@extend %form__input;
+		margin-left: 30px;
+		max-width: 285px;
+
+		&-inner[type="text"] {
+			@extend %form__input-inner;
+			max-width: 285px;
+		}	
+	}
+
+	@media screen and (max-width: 655px) {
+		&__email {
+			width: 100%;
+			margin: 30px auto;
+
+			&-inner {
+				text-align: center;
+				width: 100%;
+			}
+		}
+	}	
+
+	/* === email ===*/	
+
+	/* === message ===*/
+
+	&__message {
+		width: 100%;
+		max-width: 599px;
+		margin-top: 30px;
+
+		&-inner {
+			width: 100%;
+			max-width: 599px;			
+			padding: 15px 20px;
+			font-family: $fonts-1;
+			outline: none;
+		}
+	}
+
+	@media screen and (max-width: 1320px) {
+		&__message {
+			text-align: center;
+			margin: 30px auto;
+
+			&-inner {
+				text-align: center;
+			}
+		}
+	}
+
+	/* === message ===*/
+
+	/* === btn ===*/	
+
+	&__btn {
+		@extend %bckg-green;
+		max-width: 175px;
+		height: 45px;
+		margin-top: 30px;
+
+		&-inner {
+			font-family: $fonts-1;
+			color:$white;
+			text-decoration: none;
+		}
+	}
+
+	@media screen and (max-width: 1320px) {
+		&__btn {
+			margin: 30px auto;
+			max-width: 599px;
+		}
+	}
+
+	/* === btn ===*/		
+}
+
+/* === form ===*/
+
+/* === send ===*/
+
+/* ======== news ======== */
+
+.news {
+	width: 100%;
+
+	&__title {
+		font-size: 48px;
+		color:$color;
+		font-family: $fonts;
+		text-align: center;
+		margin-top: 145px;
+		margin-bottom: 65px;
+	}
+
+	/* === column ===*/
+
+	&__column {
+		display: flex;
+		justify-content: center;
+	}
+
+	@media screen and (max-width: 1170px) {
+		&__column {
+			flex-wrap: wrap;
+		}
+	}
+
+	@media screen and (max-width: 1170px) {
+		&__column {
+			text-align: center;
+		}
+	}	
+
+	/* === column ===*/	
+
+	&__block {
+		@extend %news__block-inner;
+	}
+
+	&__photo {
+		@extend %news__photo-inner;
+	}
+
+	&__info {
+		@extend %news__info-inner;
+	}
+
+	/* === icons ===*/
+
+	&__icons {
+		@extend %news__icons-inner;
+	}
+
+	@media screen and (max-width: 340px) {
+		&__icons {
+			display: block;
+		}
+	}
+
+	/* === icons ===*/	
+
+	/* === icons-month ===*/
+
+	@media screen and (max-width: 340px) {
+		&__icons-month {
+			margin-top: 25px;
+		}		
+	}
+
+	/* === block-1 ===*/
+
+	&__block-1 {
+		margin: 0 30px 0;
+	}
+
+	@media screen and (max-width: 1025px) {
+		&__block-1 {
+			margin-top: 30px;
+		}
+	}
+
+	@media screen and (max-width: 570px) {
+		&__block-1 {
+			margin: 0;
+			margin-top: 30px;
+		}
+	}
+
+
+	/* === block-1 ===*/
+
+	/* === block-2 ===*/	
+
+	@media screen and (max-width: 1170px) {
+		&__block-2 {
+			margin: 30px 0;
+		}
+	}	
+
+	/* === block-2 ===*/		
+
+	/* === subtitle ===*/
+
+	&__subtitle {
+		font-size: 18px;
+		font-family: $fonts;
+		margin-top: 40px;
+		margin-bottom: 30px;
+	}
+
+	@media screen and (max-width: 340px) {
+		&__subtitle {
+			font-size: 20px;
+		}
+	}
+
+	/* === subtitle ===*/	
+
+	&__text {
+		color:#707070;
+		font-size: 15px;
+		font-family: $fonts-1;
+		line-height: 30px;
+	}
+
+	&__contiune {
+		margin-top: 10px;
+		color:#707070;
+		font-family: $fonts-1;
+		font-size: 18px;
+	}
+
+	&__contiune-1 {
+		margin-top: 10px;
+		color:#00b894;
+		font-weight: bold;
+		font-family: $fonts-1;
+		font-size: 18px;
+	}	
+}
+
+/* ======== news ======== */
+
+/* === our ===*/
+
+.our {
+	width: 100%;
+
+	/* === inner ===*/
+
+	&__inner {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 135px;
+		margin-bottom: 135px;
+
+		&-row {
+			margin:0 80px;
+		}
+	}
+
+	@media screen and (max-width: 1170px) {
+		&__inner {
+			flex-wrap: wrap;			
+		}
+	}	
+	
+	/* === inner ===*/		
+}
+
+@media screen and (max-width: 792px) {
+	.our__inner-row-1 {
+		margin-top: 50px;
+	}
+}
+
+/* === our ===*/
+
+/* === footer === */
+
+.footer {
+	width: 100%;
+	background: #f5f6fb;
+
+	/* ========== inner =========*/	
+
+	&__inner {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(279px, 1fr));
+		padding: 100px 0 45px;
+
+
+		/* === text === */
+
+		&-text {
+			color:#707070;
+			font-family: $fonts-1;
+			max-width: 290px;
+			width: 100%;
+			line-height: 30px;
+			margin-top: 25px;
+		}
+
+		@media screen and (max-width: 280px) {
+			&-text {
+				max-width: 250px;
+			}
+		}
+
+		/* === text === */
+
+
+		&-title {
+			font-size: 16px;
+			font-family: $fonts;
+			color:$color;
+		}
+
+		/* === link-2 ===*/
+
+		&-link-2 {
+			margin-left: 120px;
+		}
+
+		@media screen and (max-width: 868px) {
+			&-link-2 {
+				text-align: center;
+			}
+
+			&-title {
+				text-align: left;
+			}
+		}
+
+		@media screen and (max-width: 864px) {
+			&-link-2 {
+				display: none;
+			}
+		}
+
+
+		/* === link-2 ===*/					
+
+		/* === link-1 ===*/
+
+		&-link-1 {
+			margin-left: 120px;
+		}
+
+		@media screen and (max-width: 868px) {
+			&-link-1 {
+				display: none;
+			}
+		}	
+
+		/* === link-1 ===*/			
+
+		/* === quick === */
+
+		&-quick {
+			display: table-caption;
+			font-family: $fonts-1;
+			font-size: 14px;
+			color:#707070;
+			line-height: 30px;
+			margin-top: 40px;
+		}
+
+		/* === quick === */		
+	}
+
+	/* ========== inner =========*/		
+	
+	@media screen and (max-width: 864px) {
+		&__inner {
+			display: grid;
+			justify-items: center;
+		}
+	}		
+
+	@media screen and (max-width: 587px) {
+		&__inner {
+			display: grid;
+			justify-items: center;
+			text-align: center;
+		}
+	}
+
+	@media screen and (max-width: 280px) {
+		&__inner {
+			display: grid;
+			justify-items: center;
+			text-align: center;
+			grid-template-columns: 1fr;
+		}
+	}	
+
+
+	&__linear {
+		width: 100%;
+		border: none;
+		height: 1px;	
+
+		&-inner {
+			border: none;
+			height: 1px;
+			background-color: #dcdde1;
+		}
+	}	
+}
+
+.form-email {
+
+
+	&__title {
+		font-size: 16px;
+		font-family: $fonts;
+		color:$color;
+	}
+
+	&__block {
+		display: flex;
+	}
+
+	&__row {
+		margin-top: 40px;
+		max-width: 250px;
+		height: 45px;
+		width: 100%;
+
+		&-inner {
+			max-width: 250px;
+			height: 45px;
+			width: 100%;
+			padding: 15px 18px;
+			font-size: 14px;
+			font-family: $fonts-1;
+			outline: none;
+			color:#b2b3b5;
+			border: solid 1px #b2b3b5;			
+		}
+	}
+
+	&__arrows {
+		background-color: #00b894;
+		width: 55px;
+		height: 45px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 40px;
+	}
+}
+
+/* === footer === */
+
+.footer-top {
+	width: 100%;
+
+	/* ======== inner ========*/
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 85px;				
+
+		/* === author === */
+
+		&-author {
+			font-size: 15px;
+			font-family: $fonts-1;
+			color:#707070;
+		}
+
+		@media screen and (max-width: 656px) {
+			&-author {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				display: block;
+			}
+		}
+
+		/* === author === */		
+
+		&-text {
+			font-size: 15px;
+			font-family: $fonts-1;
+			color:#707070;			
+		}
+
+		/* === row ===*/
+
+		&-row {
+			display: flex;
+			align-items: center;
+			margin-left: 13px;
+		}
+
+		@media screen and (max-width: 656px) {
+			&-row {
+				text-align: center;
+				margin:0 10px;
+				display: block;
+			}
+		}
+
+		/* === row ===*/
+
+		/* === card ===*/
+
+		&-card {
+			display: flex;
+		}	
+
+		@media screen and (max-width: 656px) {
+			&-card {
+				justify-content: center;
+				margin-top: 30px;
+			}
+		}
+
+		/* === card ===*/		
+	}
+
+	@media screen and (max-width: 656px) {
+		&__inner {
+			display: block;
+			text-align: center;
+			height: 140px;
+		}
+	}
+
+	/* ======== inner ========*/	
+}
